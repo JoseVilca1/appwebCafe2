@@ -7,7 +7,8 @@ COPY *.csproj ./
 RUN dotnet restore
 #luego va a publicar en correr proyecto publish**\
 COPY . ./
-RUN dotnet publish -c Release -o out 
+RUN dotnet publish appwebCafe2.csproj -c Release -o out
+
 #configuracion**\
 FROM mcr.microsoft.com/dotnet/aspnet:8.0
 WORKDIR /app
