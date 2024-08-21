@@ -1,0 +1,80 @@
+<!DOCTYPE html> 
+<html lang="es"> 
+<head> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Contacto</title>
+    <style> /* parte frond */ /* parte del diseño from */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .form-container {
+            max-width: 600px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: #fff4e6; /* Fondo naranja claro */
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h3 {
+            color: #333;
+            text-align: center;
+        }
+        .box {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        .box:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+        .btn {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            background-color: #007bff;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+        textarea.box {
+            height: 100px;
+            resize: vertical;
+        }
+    </style>
+</head>
+<body>
+
+<div class="form-container">
+    
+    @if (TempData["MessageContacto"] != null) //si el contacto esta vacio
+    {                                           // va a escribir eso:
+        <div class="alert alert-success" role="alert"> 
+            @TempData["MessageContacto"]
+        </div>
+    }
+    <form asp-controller="Home" asp-action="Create" method="post">
+        <h3>Ponerse en Contacto</h3>
+        <input type="text" placeholder="Nombre Completo" class="box" id="Nombre" name="Nombre" required>
+        <input type="email" placeholder="Correo Electrónico" class="box" id="Correo" name="Correo" required>
+        <input type="number" placeholder="Número de Teléfono" class="box" id="Phone" name="Phone" required>
+        <input type="text" placeholder="Asunto" class="box" id="Asunto" name="Asunto" required>
+        <textarea placeholder="Escribe tu mensaje" class="box" id="Mensaje" name="Mensaje" required></textarea>
+        <input type="submit" value="Enviar Mensaje" class="btn">
+    </form>
+</div>
+
+</body>
+</html>
+

@@ -18,8 +18,14 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="8.0.6" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.3" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.6" />
+    <PackageReference Include="Microsoft.Extensions.ML" Version="2.0.0" /> <!--ACA ES UN URL QUE DEBEN EN EL TERMINAL VISUAL STUDIO2022  -->
+    <PackageReference Include="Microsoft.ML" Version="3.0.1" />
+    <PackageReference Include="Microsoft.ML.FastTree" Version="3.0.1" /> <!--ACA ES UN URL QUE DEBEN EN EL TERMINAL -->
+    <PackageReference Include="Microsoft.ML.LightGbm" Version="3.0.1" />
+    <PackageReference Include="Microsoft.ML.TorchSharp" Version="0.21.1" /> <!--ACA ES UN URL QUE DEBEN EN EL TERMINAL -->
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.2" />
-    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="8.0.2" /> <!--ACA ES PARA VER SI INSTALO EL FRAMEWORK.PostgreSql -->
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="8.0.2" />
+    <PackageReference Include="TorchSharp-cpu" Version="0.101.5" /> <!--ACA ES PARA VER SI INSTALO EL FRAMEWORK.PostgreSql -->
   </ItemGroup>
 
 </Project>

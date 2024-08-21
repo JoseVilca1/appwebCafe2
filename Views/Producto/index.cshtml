@@ -1,0 +1,44 @@
+@model IEnumerable<appwebCafe2.Models.Producto>
+
+@{
+    ViewData["Title"] = "Estilos de Café";
+}
+
+<h1 class="text-center mb-4">@ViewData["Title"]</h1>
+
+@if (Model.Any())
+{
+    <div class="row">
+        @foreach (var producto in Model)
+        {
+            <div class="col-md-4 d-flex align-items-stretch">
+                <div class="card mb-4 shadow-sm border-0" style="background-color: #f5f5f5; border-radius: 10px;">
+                    @if (!string.IsNullOrEmpty(producto.ImagenUrl))
+                    {
+                        <img class="card-img-top" src="@producto.ImagenUrl" alt="@producto.Nombre" style="height: 200px; object-fit: contain; border-radius: 10px 10px 0 0;">
+                    }
+                    else
+                    {
+                        <div class="card-img-top d-flex align-items-center justify-content-center" style="height: 200px; background-color: #e0e0e0; border-radius: 10px 10px 0 0;">
+                            <span class="text-muted">No disponible</span>
+                        </div>
+                    }
+                    <div class="card-body text-center" style="background-color: #fff5e6;">
+                        <h5 class="card-title">@producto.Nombre</h5>
+                        <p class="card-text">@producto.Descripcion</p>
+                        <div class="d-flex justify-content-center align-items-center">
+                            <span class="text-muted font-weight-bold">@producto.Precio?.ToString("C", new System.Globalization.CultureInfo("es-PE"))</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+}
+else
+{
+    <p class="text-center text-muted">No hay productos disponibles en este momento.</p>
+}
+
+
+

@@ -5,7 +5,7 @@ WORKDIR /app
 #va a copiar todo lo que esta en el proyecto del appwebCafe2.csproj, toda la extensiones**\
 COPY *.csproj ./ 
 RUN dotnet restore
-#luego va a publicar en correr proyecto publish**\
+#luego va a publicar en correr proyecto publish**\aca hemos agregado el nombre para q funcione porque me salia error en render
 COPY . ./
 RUN dotnet publish appwebCafe2.csproj -c Release -o out
 
